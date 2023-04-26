@@ -33,7 +33,7 @@ app.use("/api/podcasts",Podcastroutes)
 const PORT=process.env.PORT || 5000
 
 /*const dburl='mongodb://0.0.0.0:27017/podcastify'*/
-const dburl='mongodb+srv://PRADEEP123:'+encodeURIComponent('Knight@9026')+'@cluster0.x5jbf4w.mongodb.net/podcastify?retryWrites=true&w=majority'
+const dburl='mongodb+srv://PRADEEP123:'+encodeURIComponent('hehehehe')+'@cluster0.x5jbf4w.mongodb.net/podcastify?retryWrites=true&w=majority'
 /*const dburl=process.env.db_url*/
 
  
