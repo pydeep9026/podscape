@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.mantine-Carousel-indicators {
+    margin-right: 10rem;
+}
+
+@media screen and (max-width: 765px) {
+    .mantine-Carousel-indicators {
+        margin-right: 4rem;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .mantine-Carousel-indicators {
+        margin-right: 2rem;
+    }
+}
+
+.mantine-Carousel-indicator {
+    background-color: #c9bfbf;
+}
+
+.mantine-Carousel-control {
+    display: none;
+}
+
+.card {
+    position: relative;
+    cursor: pointer;
+    border-radius: 15px;
+}
+
+.view-all {
+    text-decoration: none;
+    position: relative;
+    border: none;
+    font-size: 14px;
+    font-family: inherit;
+    color: #fff;
+    text-align: center;
+    background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+    background-size: 300%;
+    border-radius: 30px;
+    z-index: 1;
+}
+
+.view-all:hover {
+    animation: ani 8s linear infinite;
+    border: none;
+    line-height: 1.5em;
+}
+
+@keyframes ani {
+    0% {
+        background-position: 0%;
+    }
+
+    100% {
+        background-position: 400%;
+    }
+}
+
+.view-all:before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    z-index: -1;
+    background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+    background-size: 400%;
+    border-radius: 35px;
+    transition: 1s;
+}
+
+.view-all:hover::before {
+    filter: blur(20px);
+}
+
+.view-all:active {
+    background: linear-gradient(32deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+}
+
+.artist_card {
+    --hover-bg: rgba(124, 124, 124, 0.5);
+    text-align: center;
+    border-radius: 100%;
+    position: relative;
+    overflow: hidden;
+    transition: .3s cubic-bezier(.6, .4, 0, 1), transform .15s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+
+.artist_card> :not(.details) {
+    transition: .3s cubic-bezier(.6, .4, 0, 1);
+}
+
+.artist_card .details {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    font-weight: bold;
+    top: 100%;
+    transition: all .3s cubic-bezier(.6, .4, 0, 1);
+}
+
+.artist_card:hover .details {
+    top: 0;
+    font-size: 1.2em;
+}
+
+.artist_card:hover {
+    background: var(--hover-bg);
+}
